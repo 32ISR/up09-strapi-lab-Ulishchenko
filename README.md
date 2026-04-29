@@ -45,7 +45,7 @@ _Если разворачивать локально, то это не потр
 - `bio` (Rich Text)
 - `photo` (Media)
 - `specializations` (JSON)
-- relation → `Classes` (one-to-many)
+- relation → `FitnessClass` (one-to-many)
 - relation → `Certifications` (one-to-many)
 
 **`Certification`**
@@ -53,7 +53,6 @@ _Если разворачивать локально, то это не потр
 - `issuedBy` (Text)
 - `issuedAt` (Date)
 - `document` (Media)
-- relation → `Trainer` (many-to-one)
 
 **`FitnessClass`**
 - `title` (Text)
@@ -64,22 +63,18 @@ _Если разворачивать локально, то это не потр
 - `difficulty` (Enumeration: easy / moderate / hard)
 - `type` (Enumeration: yoga / cardio / strength / pilates / hiit)
 - `room` (Text)
-- relation → `Trainer` (many-to-one)
 - relation → `Bookings` (one-to-many)
-- relation → `Tags` (many-to-many)
+- relation → `Tags` (one-to-many)
 
 **`Booking`**
 - `bookedAt` (DateTime)
 - `bookingStatus` (Enumeration: confirmed / cancelled / attended)
-- relation → `Member` (many-to-one)
-- relation → `FitnessClass` (many-to-one)
 
 **`Subscription`**
 - `startDate`, `endDate` (Date)
 - `isActive` (Boolean)
 - `plan` (Enumeration: monthly / quarterly / annual)
-- `price` (Decimal)
-- relation → `Member` (many-to-one)
+- `price` (Float)
 
 **`Tag`**
 - `name` (Text, unique)
