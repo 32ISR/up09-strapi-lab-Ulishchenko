@@ -70,7 +70,7 @@ _Если разворачивать локально, то это не потр
 
 **`Booking`**
 - `bookedAt` (DateTime)
-- `status` (Enumeration: confirmed / cancelled / attended)
+- `bookingStatus` (Enumeration: confirmed / cancelled / attended)
 - relation → `Member` (many-to-one)
 - relation → `FitnessClass` (many-to-one)
 
